@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Port Solutions Roofing | Trusted Roofing Contractor in Manassas, VA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a5276;
+            --secondary: #e67e22;
+            --accent: #2c81ba;
+            --light: #f8f9fa;
+            --dark: #2c3e50;
+            --gray: #6c757d;
+            --text: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7f9;
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            height: 60px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://portsolutionsdmv.com/wp-content/uploads/2025/04/Start-With-Confidence.jpg') no-repeat center center;
+            background-size: cover;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            background-color: #d35400;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Main Content Styles */
+        .intro {
+            background-color: white;
+            padding: 3rem 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin: 2rem 0;
+        }
+
+        .intro h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .intro p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .services {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin: 2rem 0;
+        }
+
+        .services h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.2rem;
+        }
+
+        .service-item {
+            background-color: var(--light);
+            padding: 1.2rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary);
+            transition: transform 0.3s;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .citations {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin: 2rem 0;
+        }
+
+        .citations-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .citations h2 {
+            color: var(--primary);
+        }
+
+        .citation-count {
+            background-color: var(--secondary);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        .citation-list {
+            list-style-type: none;
+            max-height: 500px;
+            overflow-y: auto;
+            padding: 10px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+        }
+
+        .citation-item {
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+
+        .citation-item:last-child {
+            border-bottom: none;
+        }
+
+        .citation-item a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .citation-item a:hover {
+            color: var(--secondary);
+        }
+
+        .citation-icon {
+            width: 20px;
+            text-align: center;
+        }
+
+        /* Blog Section */
+        .blog-section {
+            background-color: white;
+            padding: 3rem 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin: 2rem 0;
+        }
+
+        .blog-section h2 {
+            color: var(--primary);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .blog-card {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+            background-color: var(--light);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+        }
+
+        .blog-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            color: var(--primary);
+        }
+
+        .blog-link {
+            display: inline-block;
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 10px;
+        }
+
+        .blog-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            padding: 4rem 2rem;
+            border-radius: 10px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .contact-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+
+        .contact-button {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.3rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            border: 2px solid transparent;
+        }
+
+        .contact-button:hover {
+            background-color: transparent;
+            border-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 0 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .footer-logo {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo img {
+            height: 60px;
+        }
+
+        .footer-info {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-column h3 {
+            color: var(--secondary);
+            margin-bottom: 1.2rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-links {
+            list-style-type: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .nav-links {
+                gap: 15px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .citations-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .intro, .services, .citations, .blog-section {
+                padding: 1.8rem;
+            }
+            
+            .footer-info {
+                flex-direction: column;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="https://portsolutionsdmv.com">
+                    <img src="https://portsolutionsdmv.com/wp-content/uploads/2025/04/portsolution-logo-removebg-preview-1.png" alt="Port Solutions Roofing" class="logo">
+                </a>
+                <div class="nav-links">
+                    <a href="#services">Services</a>
+                    <a href="#citations">Citations</a>
+                    <a href="#blog">Blog</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Expert Roofing & Exterior Restoration in Northern Virginia</h1>
+                <p>We manage every step from inspection to installation, giving you a durable and attractive roofing system built to last. Our team also installs quality siding, gutters, and windows that improve curb appeal, increase home value, and add real peace of mind. Most projects are completed in about ten days, so you can enjoy a safer and better looking home without long delays.</p>
+                <a href="#contact" class="cta-button">GET YOUR FREE QUOTE</a>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <!-- Introduction -->
+        <section class="intro">
+            <h2>Trusted Roofing & Exterior Restoration in Northern Virginia</h2>
+            <p>Port Solutions Roofing, led by Anthony Warner, is your premier licensed and insured contractor serving Manassas, Fairfax, Richmond, and across Northern Virginia. With years of proven expertise, we specialize in comprehensive exterior restoration that protects and enhances your property's value.</p>
+            <p>This page serves as a central hub for our online business profiles and citations, making it easy for homeowners to find and verify our credentials across the web.</p>
+        </section>
+
+        <!-- Services -->
+<section class="services" id="services">
+    <h2>Our Professional Services</h2>
+    <p>At Port Solutions Roofing and Exterior, our reputation is built on integrity and accountability. With more than twenty years in construction, our team has handled projects ranging from family homes to well known national brands like Starbucks and McDonald’s. We have public adjusters, project managers, and estimators on staff to keep your roofing, siding, gutter, and window work moving smoothly from the first inspection to the final walkthrough. When you choose us, you can expect clear communication, honest workmanship, and results that are done the right way every time.<p>
+    
+    <div class="service-grid">
+        <div class="service-item">
+            <h3>Roofing Installation & Repair</h3>
+            <p>Complete roof replacement, repairs, and maintenance using premium materials to protect your home from the elements.</p>
+        </div>
+        <div class="service-item">
+            <h3>Window Replacement</h3>
+            <p>Energy-efficient window installation and replacement to enhance comfort and reduce utility costs.</p>
+        </div>
+        <div class="service-item">
+            <h3>Decks & Patios Construction</h3>
+            <p>Custom-designed outdoor living spaces built with durable materials for years of enjoyment.</p>
+        </div>
+        <div class="service-item">
+            <h3>Siding, Stucco & Brick Work</h3>
+            <p>Exterior cladding solutions that improve curb appeal and provide superior weather protection.</p>
+        </div>
+        <div class="service-item">
+            <h3>Gutters, Alum-Wraps & Fascia</h3>
+            <p>Proper water management systems to prevent foundation damage and protect your home's exterior.</p>
+        </div>
+        <div class="service-item">
+            <h3>Bathroom Restoration</h3>
+            <p>Complete bathroom remodeling and renovation services to create your dream bathroom space.</p>
+        </div>
+        <div class="service-item">
+            <h3>Kitchen Restoration</h3>
+            <p>Kitchen remodeling and upgrades that combine functionality with beautiful design elements.</p>
+        </div>
+        <div class="service-item">
+            <h3>Concrete Services</h3>
+            <p>Professional concrete work for driveways, walkways, and foundations with lasting durability.</p>
+        </div>
+    </div>
+</section>
+
+<style>
+.services {
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    margin: 2rem 0;
+}
+
+.services h2 {
+    color: var(--primary);
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.service-item {
+    background-color: var(--light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--secondary);
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 100%;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.service-item h3 {
+    color: var(--primary);
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+}
+
+.service-item p {
+    color: var(--gray);
+    line-height: 1.5;
+    margin: 0;
+}
+</style>
+
+        <!-- Citations -->
+        <section class="citations" id="citations">
+            <div class="citations-header">
+                <h2>Our Business Citations & Profiles</h2>
+                <div class="citation-count">65+ Citations</div>
+            </div>
+            <p>Find our business profiles across the web to verify our credentials and read customer reviews.</p>
+            <ul class="citation-list">
+                <li class="citation-item"><a href="https://us.enrollbusiness.com/BusinessProfile/7135584/Port%20solutions" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> US Enroll Business</a></li>
+                <li class="citation-item"><a href="https://www.find-us-here.com/businesses/Port-solution-Manassas-Virginia-USA/34245012/" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> Find Us Here</a></li>
+                <li class="citation-item"><a href="https://www.fastexpert.com/pros-roofingcontractors/port-solutions-115858/" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> Fast Expert</a></li>
+                <li class="citation-item"><a href="https://ebusinesspages.com/https%3a-www.portsolutionsdmv.com-_epmpw.co?PostReturn=0" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> eBusiness Pages</a></li>
+                <li class="citation-item"><a href="https://www.apsense.com/user/s11222" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> APSense</a></li>
+                <li class="citation-item"><a href="https://www.provenexpert.com/port-solutions2/?mode=preview" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> Proven Expert</a></li>
+                <li class="citation-item"><a href="https://www.tupalo.co/manassas-virginia/port-solution" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> Tupalo</a></li>
+                <li class="citation-item"><a href="https://www.callupcontact.com/b/businessprofile/httpswwwportsolutionsdmvcom/9590448" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> CallUpContact</a></li>
+                <li class="citation-item"><a href="https://www.zeemaps.com/map/nzdny?group=6857732&location=20110%2C%20Manassas%2C%20VA%2C%20USA" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> ZeeMaps</a></li>
+                <li class="citation-item"><a href="https://www.dealerbaba.com/suppliers/others/port-solution.html" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> DealerBaba</a></li>
+                <li class="citation-item"><a href="https://www.startus.cc/company/port-solution" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> StartUs</a></li>
+                <li class="citation-item"><a href="https://bizidex.com/en/port-solution-window-treatments-786359" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> BizIdex</a></li>
+                <li class="citation-item"><a href="https://www.classifiedads.com/home_services_stores/33b2rfvjw3ddz" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> Classified Ads</a></li>
+                <li class="citation-item"><a href="https://www.bunity.com/-27d21812-6001-475f-9c6d-8d7fb64d8149" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> Bunity</a></li>
+                <li class="citation-item"><a href="https://www.homeservice.contractors/united-states/manassas/port-solution" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> HomeService Contractors</a></li>
+                <li class="citation-item"><a href="https://citysquares.com/b/port-solution-26664722" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> CitySquares</a></li>
+                <li class="citation-item"><a href="https://www.blinx.biz/port-solution" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> Blinx</a></li>
+                <li class="citation-item"><a href="https://www.brownbook.net/business/53686265/port-solutions" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> BrownBook</a></li>
+                <li class="citation-item"><a href="https://www.1stopstartup.com/manassas-va/roofing-services/port-solution" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> 1StopStartup</a></li>
+                <li class="citation-item"><a href="https://mapfling.com/qep58x6" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> MapFling</a></li>
+                <li class="citation-item"><a href="https://www.muslimyellowpages.com/manassas-va/home-improvement/port-solution" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> Muslim Yellow Pages</a></li>
+                <li class="citation-item"><a href="https://www.trysmallbiz.com/united-states/manassas/home-services/port-solution" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> TrySmallBiz</a></li>
+                <li class="citation-item"><a href="https://list.ly/list/D3gU-port-solution" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> List.ly</a></li>
+                <li class="citation-item"><a href="https://www.bark.com/en/us/company/port-solution/N0ZXRj/" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> Bark</a></li>
+                <li class="citation-item"><a href="https://www.freelistingusa.com/listings/port-solution" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> FreeListing USA</a></li>
+                <li class="citation-item"><a href="https://www.storeboard.com/portsolutions" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> Storeboard</a></li>
+                <li class="citation-item"><a href="https://vymaps.com/US/Port-Solution-VN123798/?id_new=f013731970826aae7fd4ae6ed0d768ae" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> VY Maps</a></li>
+                <li class="citation-item"><a href="https://www.finduslocal.com/roofing-contractors/virginia/manassas/port-solution_9890-liberia-ave-1196-manassas-va-20110/" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> Find Us Local</a></li>
+                <li class="citation-item"><a href="https://www.topgoogle.com/listing/port-solution/" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> TopGoogle</a></li>
+                <li class="citation-item"><a href="https://www.ehbact.com/manassas-va/construction-contractors/port-solution" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> EHBACT</a></li>
+                <li class="citation-item"><a href="https://www.expatriates.com/cls/61025219.html?preview" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> Expatriates</a></li>
+                <li class="citation-item"><a href="https://penzu.com/p/9415655e4a487b5b" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> Penzu</a></li>
+                <li class="citation-item"><a href="https://1businessworld.com/company/port-solution-2/" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> 1BusinessWorld</a></li>
+                <li class="citation-item"><a href="https://www.scribblemaps.com/maps/view/Port-Solution/L4rBDnHfpP" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> Scribble Maps</a></li>
+                <li class="citation-item"><a href="https://pastelink.net/l8tbcfi3" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> Pastelink</a></li>
+                <li class="citation-item"><a href="https://www.bizthistown.com/united-states/manassas/home-improvement-maintenance/anthony-warner" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> BizThisTown</a></li>
+                <li class="citation-item"><a href="http://www.contractorsandsuppliers.com/manassas-va/commercial-contractors/port-solution" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> Contractors and Suppliers</a></li>
+                <li class="citation-item"><a href="https://www.sold.com.au/manassas-va/sample-category/port-solution" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> Sold.com.au</a></li>
+                <li class="citation-item"><a href="https://www.ourblackeconomy.com/manassas-va/home-services/port-solution" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> Our Black Economy</a></li>
+                <li class="citation-item"><a href="http://www.officiallyiconic.com/manassas-va/home-services/port-solution" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> Officially Iconic</a></li>
+                <li class="citation-item"><a href="https://www.meetyourmarkets.com/manassas-va/port-solution" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> Meet Your Markets</a></li>
+                <li class="citation-item"><a href="https://www.buildzoom.com/contractor/port-solution" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> BuildZoom</a></li>
+                <li class="citation-item"><a href="https://akama.com/company/Port_Solution_a2b073930939.html" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> Akama</a></li>
+                <li class="citation-item"><a href="https://www.cybo.com/US-biz/port-solution" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> Cybo</a></li>
+                <li class="citation-item"><a href="https://clutch.co/profile/port-solutions-roofing" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> Clutch</a></li>
+                <li class="citation-item"><a href="https://www.trustindex.io/reviews/www.portsolutionsdmv.com?_gl=1*1wcf8s8*_gcl_au*NTEyNjI1MTc5LjE3NTk0NzA3MjguMjEyNTk2OTA0MS4xNzU5NDcwNzI4LjE3NTk0NzA3MzY.*_ga*MTI2MDM4ODkwMy4xNzU5NDcwNzEx*_ga_DGL6KLFTVT*czE3NTk0NzA3MTAkbzEkZzEkdDE3NTk0NzA5NzQkajU5JGwwJGg2NTEyMDA3MDA." target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> TrustIndex</a></li>
+                <li class="citation-item"><a href="https://www.houzz.com/hznb/professionals/roofing-and-gutters/port-solutions-roofing-pfvwin-pf~257254864" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> Houzz</a></li>
+                <li class="citation-item"><a href="https://www.n49.com/biz/6886997/port-solutions-roofing-va-manassas-9890-liberia-ave/" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> N49</a></li>
+                <li class="citation-item"><a href="https://yandex.com/maps/org/port_solutions_roofing/183707926125/?ll=10.854186%2C49.182076&utm_campaign=941672&utm_content=feedback_maps&utm_medium=email&utm_source=sender&utm_term=org&z=4" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> Yandex Maps</a></li>
+                <li class="citation-item"><a href="https://www.bizcommunity.com/Company/PortSolutionsRoofing" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> BizCommunity</a></li>
+                <li class="citation-item"><a href="https://issuu.com/portsolutionsdmv" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> Issuu</a></li>
+                <li class="citation-item"><a href="https://www.successcenter.com/manassas-va/brands/port-solutions-roofing" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> Success Center</a></li>
+                <li class="citation-item"><a href="https://anonup.com/@AnthonyWarner" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> AnonUp</a></li>
+                <li class="citation-item"><a href="https://www.us-info.com/en/usa/port_solutions_roofing_exterior/manassas/USVA100983934-8889197678/businessdetails.aspx" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> US-Info</a></li>
+                <li class="citation-item"><a href="https://www.owler.com/company/portsolutionsdmv" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> Owler</a></li>
+                <li class="citation-item"><a href="https://www.slideserve.com/Edris5" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> SlideServe</a></li>
+                <li class="citation-item"><a href="https://linktr.ee/portsolutiondmv" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> Linktree</a></li>
+                <li class="citation-item"><a href="https://addyp.com/listing/virginia/manassas/find-top-best-roofing-services-near-me/port-solutions-roofing" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> Addyp</a></li>
+                <li class="citation-item"><a href="https://www.gravitysplash.com/b/port-solutions-roofing/" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> Gravity Splash</a></li>
+                <li class="citation-item"><a href="https://www.merchantcircle.com/port-solutions-roofing-manassas-va" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> MerchantCircle</a></li>
+                <li class="citation-item"><a href="https://www.homify.com/professionals/9938521/port-solutions-roofing" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> Homify</a></li>
+                <li class="citation-item"><a href="https://www.biopage.com/portsolutions" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> BioPage</a></li>
+                <li class="citation-item"><a href="https://trueen.com/business/listing/port-solutions-roofing/657292" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> Trueen</a></li>
+                <li class="citation-item"><a href="https://about.me/portsolutions" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> About.me</a></li>
+                <li class="citation-item"><a href="https://network.procore.com/p/port-solutions-roofing-manassas" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> Procore Network</a></li>
+                <li class="citation-item"><a href="https://www.allbusiness.com/company-profile/port-solutions-roofing" target="_blank"><i class="citation-icon fas fa-external-link-alt"></i> AllBusiness</a></li>
+            </ul>
+        </section>
+
+        <!-- Blog Section -->
+        <section class="blog-section" id="blog">
+            <h2>Home Improvement Insights & Tips</h2>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-content">
+                        <h3 class="blog-title">Choosing the Best Roofing Material for Your Home</h3>
+                        <p>Learn about different roofing materials and which one is right for your climate, budget, and style.</p>
+                        <a href="https://portsolutionsdmv.com/Blogs/best-roofing-material/" class="blog-link" target="_blank">Read More →</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-content">
+                        <h3 class="blog-title">7 Signs You Need a New Roof</h3>
+                        <p>Don't wait for leaks! Discover the warning signs that indicate it's time to replace your roof.</p>
+                        <a href="https://portsolutionsdmv.com/Blogs/signs-you-need-a-new-roof/" class="blog-link" target="_blank">Read More →</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-content">
+                        <h3 class="blog-title">How to Properly Reseal Windows</h3>
+                        <p>A step-by-step guide to resealing windows to improve energy efficiency and prevent drafts.</p>
+                        <a href="https://portsolutionsdmv.com/Blogs/how-to-reseal-windows/" class="blog-link" target="_blank">Read More →</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-content">
+                        <h3 class="blog-title">How to Calculate Roof Area with Pitch</h3>
+                        <p>Learn the proper way to measure your roof area, accounting for pitch, to get accurate material estimates.</p>
+                        <a href="https://portsolutionsdmv.com/Blogs/how-to-calculate-roof-area-with-pitch/" class="blog-link" target="_blank">Read More →</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-content">
+                        <h3 class="blog-title">Identifying Asbestos Siding</h3>
+                        <p>What does asbestos siding look like and how to handle it safely during home renovations.</p>
+                        <a href="https://portsolutionsdmv.com/Blogs/what-does-asbestos-siding-look-like/" class="blog-link" target="_blank">Read More →</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-content">
+                        <h3 class="blog-title">How to Insulate Windows for Winter</h3>
+                        <p>Effective methods to insulate your windows and reduce heating costs during cold months.</p>
+                        <a href="https://portsolutionsdmv.com/Blogs/how-to-insulate-windows-for-winter/" class="blog-link" target="_blank">Read More →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
+            <div class="contact-content">
+                <h2>READY TO UPGRADE YOUR HOME WITH <br>EXPERT CRAFTSMANSHIP, <br>LET'S TALK.</h2>
+                <p>Take the first step toward a stronger, more beautiful home. Our experts will inspect, plan, and deliver results that exceed expectations in roofing, siding, gutters, and windows while keeping your budget clear and your comfort first.</p>
+                <a href="https://portsolutionsdmv.com/contact-us/" class="contact-button">LET'S START WITH YOUR FREE QUOTE</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="https://portsolutionsdmv.com">
+                        <img src="https://portsolutionsdmv.com/wp-content/uploads/2025/04/portsolution-logo-removebg-preview-1.png" alt="Port Solutions Roofing">
+                    </a>
+                </div>
+                <div class="footer-info">
+                    <div class="footer-column">
+                        <h3>Contact Us</h3>
+                        <ul class="footer-links">
+                            <li><i class="fas fa-map-marker-alt"></i> <a href="https://maps.app.goo.gl/wb6ceE8CxRPh7QoJ8">9890 Liberia Ave #1196, Manassas, VA 20110</a></li>
+                            <li><i class="fas fa-phone"></i> <a href="tel:8889197678">(888) 919-7678</a></li>
+                            <li><i class="fas fa-envelope"></i> <a href="mailto:info@portsolutionsdmv.com">info@portsolutionsdmv.com</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Our Services</h3>
+                        <ul class="footer-links">
+                            <li><a href="https://portsolutionsdmv.com/our-services/roofing/">Roofing</a></li>
+                            <li><a href="https://portsolutionsdmv.com/our-services/window-installation/">Windows</a></li>
+                            <li><a href="https://portsolutionsdmv.com/our-services/decks-patios/">Decks & Patios</a></li>
+                            <li><a href="https://portsolutionsdmv.com/our-services/sidings-stucco-brick/">Siding & Stucco</a></li>
+                            <li><a href="https://portsolutionsdmv.com/our-services/gutters-alum-wraps-fascia/">Gutters & Fascia</a></li>
+                            <li><a href="https://portsolutionsdmv.com/our-services/bathroom-restoration/">Bathroom Restoration</a></li>
+                            <li><a href="https://portsolutionsdmv.com/our-services/kitchen-restoration/">Kitchen Restoration</a></li>
+                            <li><a href="https://portsolutionsdmv.com/our-services/concrete-service/">Concrete Services</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul class="footer-links">
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#citations">Citations</a></li>
+                            <li><a href="#blog">Blog</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="https://portsolutionsdmv.com">Main Website</a></li>
+                        </ul>
+                        <div class="social-links">
+                            <a href="https://www.tiktok.com/@portsolutionsdmv" aria-label="Tiktok"><i class="fab fa-tiktok-f"></i></a>
+                            <a href="https://www.instagram.com/portsolutionsdmv/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Port Solutions Roofing. All Rights Reserved. | Licensed & Insured Contractor</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Simple animation for service items on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe service items
+        document.querySelectorAll('.service-item').forEach(item => {
+            item.style.opacity = 0;
+            item.style.transform = 'translateY(20px)';
+            item.style.transition = 'opacity 0.5s, transform 0.5s';
+            observer.observe(item);
+        });
+
+        // Observe blog cards
+        document.querySelectorAll('.blog-card').forEach(card => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s, transform 0.5s';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
